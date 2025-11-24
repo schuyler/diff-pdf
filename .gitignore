@@ -20,3 +20,6 @@ mingw
 *.o
 # the final binary
 diff-pdf
+
+# macOS package build artifacts
+build/

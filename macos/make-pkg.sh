@@ -29,17 +29,29 @@ cd "$PROJECT_ROOT"
 echo "Building diff-pdf binary..."
 "$SCRIPT_DIR/build-cli.sh"
 
+# Verify the binary exists
+if [ ! -f "$PROJECT_ROOT/diff-pdf" ]; then
+    echo "Error: diff-pdf binary not found after build"
+    exit 1
+fi
+
 # Create build directory structure
 BUILD_DIR="$PROJECT_ROOT/build"
 PKG_ROOT="$BUILD_DIR/pkgroot"
 INSTALL_DIR="$PKG_ROOT/usr/local/bin"
 
 echo "Creating package structure..."
-rm -rf "$BUILD_DIR"
+# Safety check before rm -rf
+if [ -n "$BUILD_DIR" ] && [ "$BUILD_DIR" != "/" ] && [ "$BUILD_DIR" != "$HOME" ] && [[ "$BUILD_DIR" == */build ]]; then
+    rm -rf "$BUILD_DIR"
+else
+    echo "Error: BUILD_DIR path appears unsafe: $BUILD_DIR"
+    exit 1
+fi
 mkdir -p "$INSTALL_DIR"
 
 # Copy the binary to the package root
-cp diff-pdf "$INSTALL_DIR/"
+cp "$PROJECT_ROOT/diff-pdf" "$INSTALL_DIR/"
 chmod 755 "$INSTALL_DIR/diff-pdf"
 
 # Build the package

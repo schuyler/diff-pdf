@@ -151,7 +151,7 @@ DEVELOPER_ID_APP="Developer ID Application: Your Name (ABCDE12345)" \
     macos/make-pkg.sh
 ```
 
-This creates build/diff-pdf-<version>.pkg. If DEVELOPER_ID_INSTALLER is not set, the package is created unsigned.
+This creates build/diff-pdf-${PKG_VERSION}.pkg. If DEVELOPER_ID_INSTALLER is not set, the package is created unsigned.
 
 ### Compiling on Windows using MSYS + MinGW
 
