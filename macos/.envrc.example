@@ -18,3 +18,7 @@ export PKG_ID="com.example.diff-pdf"
 # export APPLE_ID="your-apple-id@example.com"
 # export APPLE_ID_PASSWORD="app-specific-password"
 # export APPLE_TEAM_ID="ABCDE12345"
+
+# Optional: For uploading .pkg to GitHub releases (upload-release.sh)
+# Create a token at https://github.com/settings/tokens with 'repo' scope
+# export GITHUB_TOKEN="ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
