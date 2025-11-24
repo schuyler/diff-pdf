@@ -124,7 +124,7 @@ or
 $ sudo port install automake autoconf wxWidgets-3.0 poppler cairo pkgconfig
 ```
 
-bNote that many more libraries are required on Windows, where none of the
+Note that many more libraries are required on Windows, where none of the
 libraries Cairo and Poppler use are normally available. At the time of writing,
 transitive cover of the above dependencies included fontconfig, freetype, glib,
 libpng, pixman, gettext, libiconv, libjpeg and zlib.
@@ -146,7 +146,7 @@ To build a .pkg installer that installs diff-pdf into /usr/local/bin:
 ```bash
 DEVELOPER_ID_APP="Developer ID Application: Your Name (ABCDE12345)" \
     DEVELOPER_ID_INSTALLER="Developer ID Installer: Your Name (ABCDE12345)" \
-    PKG_ID="${DEVELOPER_NSID}.diff-pdf" \
+    PKG_ID="com.example.diff-pdf" \
     PKG_VERSION="1.0.0" \
     macos/make-pkg.sh
 ```
