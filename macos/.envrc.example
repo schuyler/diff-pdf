@@ -1,0 +1,13 @@
+# Example .envrc for building diff-pdf macOS installer packages
+# Copy this file to .envrc and customize the values
+# Use with direnv: https://direnv.net/
+
+# Required for make-pkg.sh
+export PKG_VERSION="1.0.0"
+export PKG_ID="com.example.diff-pdf"
+
+# Optional: For code-signing the binary (build-cli.sh and make-pkg.sh)
+# export DEVELOPER_ID_APP="Developer ID Application: Your Name (ABCDE12345)"
+
+# Optional: For signing the .pkg installer (make-pkg.sh)
+# export DEVELOPER_ID_INSTALLER="Developer ID Installer: Your Name (ABCDE12345)"

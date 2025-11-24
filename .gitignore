@@ -23,3 +23,6 @@ diff-pdf
 
 # macOS package build artifacts
 build/
+
+# direnv environment files (may contain sensitive info)
+.envrc
