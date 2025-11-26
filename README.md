@@ -129,6 +129,29 @@ libraries Cairo and Poppler use are normally available. At the time of writing,
 transitive cover of the above dependencies included fontconfig, freetype, glib,
 libpng, pixman, gettext, libiconv, libjpeg and zlib.
 
+### macOS installer (.pkg)
+
+The repository includes helper scripts under `macos/` to build the `diff-pdf` CLI binary and create a macOS installer package.
+
+To build and (optionally) sign the CLI binary:
+
+```bash
+DEVELOPER_ID_APP="Developer ID Application: Your Name (ABCDE12345)" \
+    macos/build-cli.sh
+```
+This produces a diff-pdf binary in the project root. If DEVELOPER_ID_APP is not set, the binary is left unsigned.
+
+To build a .pkg installer that installs diff-pdf into /usr/local/bin:
+
+```bash
+DEVELOPER_ID_APP="Developer ID Application: Your Name (ABCDE12345)" \
+    DEVELOPER_ID_INSTALLER="Developer ID Installer: Your Name (ABCDE12345)" \
+    PKG_ID="com.example.diff-pdf" \
+    PKG_VERSION="1.0.0" \
+    macos/make-pkg.sh
+```
+
+This creates build/diff-pdf-${PKG_VERSION}.pkg. If DEVELOPER_ID_INSTALLER is not set, the package is created unsigned.
 
 ### Compiling on Windows using MSYS + MinGW
 

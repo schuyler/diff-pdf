@@ -1,0 +1,23 @@
+# Example .envrc for building diff-pdf macOS installer packages
+# Copy this file to .envrc and customize the values
+# Use with direnv: https://direnv.net/
+
+# Required for make-pkg.sh
+# PKG_VERSION defaults to the latest git tag if not set
+# export PKG_VERSION="1.0.0"
+export PKG_ID="com.example.diff-pdf"
+
+# Optional: For code-signing the binary (build-cli.sh and make-pkg.sh)
+# export DEVELOPER_ID_APP="Developer ID Application: Your Name (ABCDE12345)"
+
+# Optional: For signing the .pkg installer (make-pkg.sh)
+# export DEVELOPER_ID_INSTALLER="Developer ID Installer: Your Name (ABCDE12345)"
+
+# Optional: For notarizing the .pkg installer (make-pkg.sh)
+# Requires all three variables to be set
+# export APPLE_ID="your-apple-id@example.com"
+# export APPLE_ID_PASSWORD="app-specific-password"
+# export APPLE_TEAM_ID="ABCDE12345"
+
+# Note: upload-release.sh uses gh CLI for authentication
+# Run 'gh auth login' to authenticate before using upload-release.sh
